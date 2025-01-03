@@ -20,6 +20,7 @@ fs.readFile(path.join(__dirname, '/素材/index.html'), 'utf8', function(err, da
 // 3.1 定义处理 css 样式的方法
 function resolveCSS(htmlStr) {
   // 3.2 使用正则提取需要的内容
+    // exec()方法，用于检索字符串中的正则表达式匹配
   const r1 = regStyle.exec(htmlStr)
   // 3.3 将提取出来的样式字符串，进行字符串的 replace 替换操作
   const newCSS = r1[0].replace('<style>', '').replace('</style>', '')
@@ -33,6 +34,7 @@ function resolveCSS(htmlStr) {
 // 4.1 定义处理 js 脚本的方法
 function resolveJS(htmlStr) {
   // 4.2 通过正则，提取对应的 <script></script> 标签内容
+  // exec()方法，用于检索字符串中的正则表达式匹配
   const r2 = regScript.exec(htmlStr)
   // 4.3 将提取出来的内容，做进一步的处理
   const newJS = r2[0].replace('<script>', '').replace('</script>', '')
