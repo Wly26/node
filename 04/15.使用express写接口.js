@@ -8,7 +8,7 @@ const app = express()
 // 配置解析表单数据的中间件
 app.use(express.urlencoded({ extended: false }))
 
-// 必须在配置 cors 中间件之前，配置 JSONP 的接口
+// 必须在配置 cors 中间件之前，配置 JSONP 的接口(不然会被认为是cors接口)
 app.get('/api/jsonp', (req, res) => {
   // TODO: 定义 JSONP 接口具体的实现过程
   // 1. 得到函数的名称
