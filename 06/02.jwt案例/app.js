@@ -23,6 +23,12 @@ const secretKey = 'itheima No1 ^_^'
 app.use(expressJWT({ secret: secretKey }).unless({ path: [/^\/api\//] }))
 
 // 登录接口
+// http://127.0.0.1:8888/api/login
+// body:
+// {
+//   username = 'admin'
+//   password = '000000'
+// }
 app.post('/api/login', function (req, res) {
   // 将 req.body 请求体中的数据，转存为 userinfo 常量
   const userinfo = req.body
@@ -46,6 +52,12 @@ app.post('/api/login', function (req, res) {
     token: tokenStr, // 要发送给客户端的 token 字符串
   })
 })
+// 测试结果：
+// {
+// 	"status": 200,
+// 	"message": "登录成功！",
+// 	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzM2NDEzMTU5LCJleHAiOjE3MzY0MTMxODl9.K1N8fFnaikjQjdnA8RlG-1s_yiBvuJJJNmGMF2AxFxU"
+// }
 
 // 这是一个有权限的 API 接口
 app.get('/admin/getinfo', function (req, res) {
