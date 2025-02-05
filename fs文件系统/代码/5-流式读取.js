@@ -7,7 +7,7 @@ const rs = fs.createReadStream('../资料/笑看风云.mp4');
 //3. 绑定 data 事件   chunk 块儿  大块儿
 rs.on('data', chunk => {
   console.log(chunk.length); // 65536 字节 => 64KB
-  // console.log(chunk.toString()); // 65536 字节 => 64KB
+  // console.log(chunk.toString()); // 65536 字节 => 64KB,会输出乱码，前端需要解码
 });
 
 //4. end  可选事件

@@ -5,6 +5,7 @@
 const fs = require('fs');
 
 //2. 创建写入流对象 
+// 会一直写入，不会断开
 const ws = fs.createWriteStream('./观书有感.txt');
 
 //3. write

@@ -1,7 +1,7 @@
 //1. 导入 fs 模块
 const fs = require('fs');
 
-//2. 创建文件夹  mk  make 制作  dir directory 文件夹
+//2. 创建文件夹  mk是指make：制作  dir是指directory：文件夹
 // fs.mkdir('./html', err => {
 //   if(err) {
 //     console.log('创建失败~');
@@ -25,7 +25,7 @@ const fs = require('fs');
 //     console.log('读取失败');
 //     return;
 //   }
-//   console.log(data);
+//   console.log("data", data);
 // });
 
 // fs.readdir('./', (err, data) => {
@@ -55,10 +55,10 @@ const fs = require('fs');
 // });
 
 //建议使用
-fs.rm('./a', {recursive: true},err => {
-  if(err){
-    console.log(err);
-    return;
-  }
-  console.log('删除成功');
-});
+// fs.rm('./a', {recursive: true},err => {
+//   if(err){
+//     console.log(err);
+//     return;
+//   }
+//   console.log('删除成功');
+// });
