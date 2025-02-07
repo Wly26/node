@@ -53,7 +53,6 @@ const server = http.createServer((request, response) => {
           response.statusCode = 500;
           response.end('<h1>Internal Server Error</h1>');
       }
-      
       return;
     }
     //获取文件的后缀名
