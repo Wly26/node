@@ -17,6 +17,7 @@ app.get('/home', (req, res) => {
   let title = '尚硅谷 - 让天下没有难学的技术';
   res.render('home', {title});
   //4. 创建模板文件
+  // 在views 文件夹中创建 home.ejs 文件
 });
 
 //监听端口, 启动服务

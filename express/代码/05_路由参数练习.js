@@ -6,6 +6,8 @@ const {singers} = require('./singers.json');
 const app = express();
 
 //创建路由
+// 例如：1-80 的歌手数据
+// http://localhost:3000/1.html
 app.get('/singer/:id.html', (req, res) => {
   //获取路由参数
   let {id} = req.params;

@@ -58,39 +58,39 @@ const db = mysql.createPool({
 // })
 
 // 演示如何更新用户的信息
-/* const user = { id: 6, username: 'aaa', password: '000' }
-// 定义 SQL 语句
-const sqlStr = 'update users set username=?, password=? where id=?'
-// 执行 SQL 语句
-db.query(sqlStr, [user.username, user.password, user.id], (err, results) => {
-  if (err) return console.log(err.message)
-  // 注意：执行了 update 语句之后，执行的结果，也是一个对象，可以通过 affectedRows 判断是否更新成功
-  if (results.affectedRows === 1) {
-    console.log('更新成功')
-  }
-}) */
+// const user = { id: 6, username: 'aaa', password: '000' }
+// // 定义 SQL 语句
+// const sqlStr = 'update users set username=?, password=? where id=?'
+// // 执行 SQL 语句
+// db.query(sqlStr, [user.username, user.password, user.id], (err, results) => {
+//   if (err) return console.log(err.message)
+//   // 注意：执行了 update 语句之后，执行的结果，也是一个对象，可以通过 affectedRows 判断是否更新成功
+//   if (results.affectedRows === 1) {
+//     console.log('更新成功')
+//   }
+// })
 
 // 演示更新数据的便捷方式
-/* const user = { id: 6, username: 'aaaa', password: '0000' }
-// 定义 SQL 语句
-const sqlStr = 'update users set ? where id=?'
-// 执行 SQL 语句
-db.query(sqlStr, [user, user.id], (err, results) => {
-  if (err) return console.log(err.message)
-  if (results.affectedRows === 1) {
-    console.log('更新数据成功')
-  }
-}) */
+// const user = { id: 6, username: 'aaaa', password: '0000' }
+// // 定义 SQL 语句
+// const sqlStr = 'update users set ? where id=?'
+// // 执行 SQL 语句
+// db.query(sqlStr, [user, user.id], (err, results) => {
+//   if (err) return console.log(err.message)
+//   if (results.affectedRows === 1) {
+//     console.log('更新数据成功')
+//   }
+// })
 
 // 删除 id 为 5 的用户
-/* const sqlStr = 'delete from users where id=?'
-db.query(sqlStr, 5, (err, results) => {
-  if (err) return console.log(err.message)
-  // 注意：执行 delete 语句之后，结果也是一个对象，也会包含 affectedRows 属性
-  if (results.affectedRows === 1) {
-    console.log('删除数据成功')
-  }
-}) */
+// const sqlStr = 'delete from users where id=?'
+// db.query(sqlStr, 5, (err, results) => {
+//   if (err) return console.log(err.message)
+//   // 注意：执行 delete 语句之后，结果也是一个对象，也会包含 affectedRows 属性
+//   if (results.affectedRows === 1) {
+//     console.log('删除数据成功')
+//   }
+// })
 
 // 标记删除
 // const sqlStr = 'update users set status=? where id=?'

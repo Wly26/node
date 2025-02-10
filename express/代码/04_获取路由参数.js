@@ -5,6 +5,7 @@ const express = require('express');
 const app = express();
 
 //创建路由
+//例如：http://localhost:3000/123.html
 app.get('/:id.html', (req, res) => {
   //获取 URL 路由参数
   console.log(req.params.id);

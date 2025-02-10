@@ -13,6 +13,7 @@ const app = express();
 function recordMiddleware(req, res, next){
   //获取 url 和 ip
   let {url, ip} = req;
+  console.log(url, ip);
   //将信息保存在文件中 access.log
   fs.appendFileSync(path.resolve(__dirname, './access.log'), `${url}  ${ip}\r\n`);
   //调用 next

@@ -14,6 +14,8 @@ app.get('/home', (req, res) => {
 });
 
 //声明中间件
+//http://localhost:3000/admin?code=521
+//http://localhost:3000/setting?code=521
 let checkCodeMiddleware = (req, res, next) => {
   //判断 URL 中是否 code 参数等于 521
   if(req.query.code === '521'){

@@ -15,3 +15,5 @@ let str = fs.readFileSync('./01_html.html').toString();
 let result = ejs.render(str, {china: china, weather});
 
 console.log(result);
+
+// vue, react 一类的前后端框架，都是基于模板引擎的
