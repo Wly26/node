@@ -21,7 +21,7 @@ router.get('/account/create', function(req, res, next) {
   res.render('create');
 });
 
-//新增记录
+//增
 router.post('/account', (req, res) => {
   //生成 id
   let id = shortid.generate();
@@ -31,7 +31,7 @@ router.post('/account', (req, res) => {
   res.render('success', {msg: '添加成功哦~~~', url: '/account'});
 });
 
-//删除记录
+//删
 router.get('/account/:id', (req, res) => {
   //获取 params 的 id 参数
   let id = req.params.id;

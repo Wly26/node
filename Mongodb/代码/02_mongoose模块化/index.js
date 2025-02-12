@@ -6,6 +6,12 @@ const mongoose = require('mongoose');
 const BookModel = require('./models/BookModel');
 
 // 调用函数
+// 基本结构
+// db(() => {
+//   console.log("连接成功...");
+// },()=>{
+//   console.log("连接失败...");
+// })
 db(() => {
   //7. 新增
   BookModel.create({
