@@ -1,0 +1,20 @@
+{
+  "accounts": [
+    {
+      "id": "9E5xbUwws",
+      "title": "2",
+      "time": "2025-02-04",
+      "type": "-1",
+      "account": "22",
+      "remarks": "222"
+    },
+    {
+      "id": "83XKFtbee",
+      "title": "1",
+      "time": "2025-02-03",
+      "type": "1",
+      "account": "11",
+      "remarks": "111"
+    }
+  ]
+}
