@@ -27,6 +27,7 @@ app.get('/', (req, res) => {
 })
 
 //登录  session 的设置
+// http://127.0.0.1:3000/login?username=admin&password=admin
 app.get('/login', (req, res) => {
   // username=admin&password=admin
   if(req.query.username === 'admin' && req.query.password === 'admin'){

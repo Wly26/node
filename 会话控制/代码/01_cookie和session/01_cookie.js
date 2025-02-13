@@ -1,15 +1,15 @@
 //导入 express
 const express = require('express');
-const cookieParser = require('cookie-parser')
+const cookieParser = require('cookie-parser')//专门解析cookie
 
 //创建应用对象
 const app = express();
-app.use(cookieParser());
+app.use(cookieParser());//可以直接使用
 
 //创建路由规则
 app.get('/set-cookie', (req, res) => {
   // res.cookie('name', 'zhangsan'); // 会在浏览器关闭的时候, 销毁
-  res.cookie('name','lisi', {maxAge: 60 * 1000}) // max 最大  age 年龄
+  res.cookie('name','lisi', {maxAge: 60 * 1000}) // max 最大  age 年龄（这个cookie的存活时间）
   res.cookie('theme', 'blue');
   res.send('home');
 });
