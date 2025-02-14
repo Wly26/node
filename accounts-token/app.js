@@ -7,6 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/web/index');
 var authRouter = require("./routes/web/auth");
 var accountRouter = require("./routes/api/account");
+var authApiRouter = require("./routes/api/auth");
 
 //引入 express-session  connect-mongo
 const session = require("express-session");
@@ -45,6 +46,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use("/", authRouter);
 app.use("/api", accountRouter);
+app.use("/api", authApiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

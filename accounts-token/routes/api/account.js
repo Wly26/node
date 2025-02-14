@@ -1,17 +1,16 @@
 var express = require("express");
 var router = express.Router();
 
+//导入中间件
+let checkTokenMiddleware = require('../../middlewares/checkTokenMiddleware');
+
 //导入 moment
 const moment = require("moment");
 const AccountModel = require("../../models/AccountModel");
 
-/* GET home page. */
-router.get("/", function (req, res, next) {
-  res.render("index", { title: "Express" });
-});
-
 // 查-所有
-router.get("/account", function (req, res, next) {
+router.get("/account", checkTokenMiddleware, function (req, res, next) {
+  console.log('req.user', req.user)// 每个账户的信息
   //读取集合信息
   AccountModel.find()
     .sort({ time: -1 })
@@ -40,7 +39,7 @@ router.get("/account", function (req, res, next) {
 });
 
 // 增
-router.post("/account", (req, res) => {
+router.post("/account", checkTokenMiddleware, (req, res) => {
   console.log(req.body);
   // 写入
   // 修改time的值
@@ -78,7 +77,7 @@ router.post("/account", (req, res) => {
 });
 
 // 删
-router.delete("/account/:id", (req, res) => {
+router.delete("/account/:id", checkTokenMiddleware, (req, res) => {
   //获取 params 的 id 参数
   let id = req.params.id;
   //删除
@@ -107,7 +106,7 @@ router.delete("/account/:id", (req, res) => {
 });
 
 //查-单个
-router.get('/account/:id', (req, res) => {
+router.get('/account/:id', checkTokenMiddleware, (req, res) => {
   //获取 id 参数
   let {id} = req.params;
   //查询数据库
@@ -129,7 +128,7 @@ router.get('/account/:id', (req, res) => {
 });
 
 //改-单个
-router.patch('/account/:id', (req, res) => {
+router.patch('/account/:id', checkTokenMiddleware, (req, res) => {
   //获取 id 参数值
   let {id} = req.params;
   //更新数据库
