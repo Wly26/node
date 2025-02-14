@@ -5,12 +5,17 @@ var router = express.Router();
 const moment = require('moment');
 const AccountModel = require('../../models/AccountModel');
 
-/* GET home page. */
+//页面html
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-// 查
+//页面html
+router.get("/account/create", function (req, res, next) {
+  res.render("create");
+});
+
+// 查 + 页面html
 router.get("/account", function (req, res, next) {
   //读取集合信息
   AccountModel.find()
@@ -25,12 +30,6 @@ router.get("/account", function (req, res, next) {
       res.render("list", { accounts: data, moment: moment });
     });
 });
-
-
-router.get("/account/create", function (req, res, next) {
-  res.render("create");
-});
-
 
 // 增
 router.post("/account", (req, res) => {
@@ -55,7 +54,6 @@ router.post("/account", (req, res) => {
     }
   );
 });
-
 
 // 删
 router.get("/account/:id", (req, res) => {
