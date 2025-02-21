@@ -2,13 +2,13 @@
 const fs = require('fs');
 const path = require('path');
 //写入文件
-// fs.writeFileSync(__dirname + '/index.html', 'love');
-// console.log(__dirname + '/index.html');
+fs.writeFileSync(__dirname + '/index.html', 'love');
+console.log(__dirname + '/index.html');
 
 //resolve  解决
-// console.log(path.resolve(__dirname, './index.html'));
-// console.log(path.resolve(__dirname, 'index.html'));
-// console.log(path.resolve(__dirname, '/index.html', './test'));
+console.log(path.resolve(__dirname, './index.html'));
+console.log(path.resolve(__dirname, 'index.html'));
+console.log(path.resolve(__dirname, '/index.html', './test'));
 
 // sep 分隔符
 // console.log(path.sep); // windows  \  Linux  /
