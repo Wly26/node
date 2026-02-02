@@ -20,6 +20,32 @@ app.get("/health", async (req, res) => {
   }
 });
 
+// POST 接口：查询 test 表
+app.post("/data", async (req, res) => {
+  try {
+    // 执行查询
+    const result = await pool.query("SELECT * FROM test");
+
+    console.log("Query result:", result); // Add this line
+
+
+    // 返回查询结果
+    res.status(200).json({
+      status: "success",
+      data: result,
+    });
+  } catch (err) {
+    // 记录错误日志
+    console.error("Database query error:", err);
+
+    // 返回错误响应
+    res.status(500).json({
+      error: "Failed to fetch data",
+      details: err.message,
+    });
+  }
+});
+
 // 错误处理中间件
 app.use((err, req, res, next) => {
   console.error(err.stack);
